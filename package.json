@@ -1,0 +1,28 @@
+{
+  "name": "music-chord",
+  "version": "0.0.0",
+  "description": "Music chords for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danigb/music-chord.git"
+  },
+  "keywords": [
+    "chord",
+    "chords",
+    "music",
+    "theory"
+  ],
+  "author": "danigb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danigb/music-chord/issues"
+  },
+  "homepage": "https://github.com/danigb/music-chord#readme",
+  "devDependencies": {
+    "vows": "^0.8.1"
+  }
+}
