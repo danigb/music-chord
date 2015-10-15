@@ -8,7 +8,9 @@
 Music chords made easy:
 
 ```js
-var dom7 = chord('1 3 5 7b')
+var M9 = chord('1 3 5 7 9')
+M9('D3') // => ['D3', 'F#3', 'A#3', 'C#4', 'E4']
+var dom7 = chord('C E G Bb')
 dom7('A4') // => ['A4', 'C#5', 'E5', 'G5']
 ```
 
@@ -16,7 +18,7 @@ dom7('A4') // => ['A4', 'C#5', 'E5', 'G5']
 
 #### Node
 
-Install via npm: `npm i --save music-scale` and require it.
+Install via npm: `npm i --save music-chord` and require it.
 
 #### Browsers
 
@@ -120,9 +122,9 @@ one parameter instead of two (see example)</p>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/master/index.js">index.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/index.js#L34">lineno 34</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L51">lineno 51</a>
 </li>
 </ul></dd>
 </dl>
@@ -142,6 +144,62 @@ Type
 <pre class="prettyprint"><code>chord('1 3 5 6', 'G') // => ['G', 'B', 'D', 'E']
 var maj79 = chord('C E G B D')
 maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
+</dd>
+<dt>
+<h4 class="name" id="dictionary"><span class="type-signature"></span>dictionary<span class="signature">(chordNames, aliases)</span><span class="type-signature"> &rarr; {function}</span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Create a chord dictionary</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>chordNames</code></td>
+<td class="type">
+<span class="param-type">Hash</span>
+</td>
+<td class="description last"><p>a hash that maps names to intervals (or notes)</p></td>
+</tr>
+<tr>
+<td class="name"><code>aliases</code></td>
+<td class="type">
+<span class="param-type">Hash</span>
+</td>
+<td class="description last"><p>(Optional) a hash that maps names to names or null</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
+<span>, </span>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L63">lineno 63</a>
+</li>
+</ul></dd>
+</dl>
+<h5>Returns:</h5>
+<div class="param-desc">
+<p>a function <code>chord(name, tonic)</code></p>
+</div>
+<dl>
+<dt>
+Type
+</dt>
+<dd>
+<span class="param-type">function</span>
+</dd>
+</dl>
 </dd>
 </dl>
 </article>

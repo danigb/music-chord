@@ -2,7 +2,7 @@ var vows = require('vows')
 var assert = require('assert')
 var chord = require('../')
 
-vows.describe('music-chord').addBatch({
+vows.describe('chord').addBatch({
   'build chord': {
     'build chord from intervals': function () {
       assert.deepEqual(chord('1 3 5 9', 'C4'), ['C4', 'E4', 'G4', 'D5'])
@@ -17,6 +17,12 @@ vows.describe('music-chord').addBatch({
     'partially applied': function () {
       var maj7drop2 = chord('C2 E2 G1 B2')
       assert.deepEqual(maj7drop2('C4'), [ 'G3', 'C4', 'E4', 'B4' ])
+    }
+  },
+  'dictionary': {
+    'create dictonary': function () {
+      var chords = chord.dictionary({major: 'C E G'})
+      assert.deepEqual(chords('major', 'Eb'), [ 'Eb', 'G', 'Bb' ])
     }
   }
 }).export(module)

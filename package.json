@@ -2,7 +2,7 @@
   "name": "music-chord",
   "version": "0.0.0",
   "description": "Music chords made easy",
-  "main": "index.js",
+  "main": "chord.js",
   "scripts": {
     "test": "vows --spec test/*.js",
     "docs": "docme README.md"
