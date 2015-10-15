@@ -157,7 +157,7 @@ one parameter instead of two (see example)</p>
 <li>
 <a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L25">lineno 25</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L26">lineno 26</a>
 </li>
 </ul></dd>
 </dl>
@@ -174,7 +174,8 @@ Type
 </dd>
 </dl>
 <h5>Example</h5>
-<pre class="prettyprint"><code>chord('1 3 5 6', 'G') // => ['G', 'B', 'D', 'E']
+<pre class="prettyprint"><code>var chord = require('music-chord')
+chord('1 3 5 6', 'G') // => ['G', 'B', 'D', 'E']
 var maj79 = chord('C E G B D')
 maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
 </dd>
@@ -217,7 +218,7 @@ maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
 <li>
 <a href="https://github.com/danigb/music-chord/blob/master/dictionary.js">dictionary.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js#L13">lineno 13</a>
+<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js#L19">lineno 19</a>
 </li>
 </ul></dd>
 </dl>
@@ -233,6 +234,11 @@ Type
 <span class="param-type">function</span>
 </dd>
 </dl>
+<h5>Example</h5>
+<pre class="prettyprint"><code>var dictionary = require('music-chord/dictionary')
+chords = dictionary({M: 'C E G', m: 'C Eb G'})
+chords('m', 'F') // => ['F', 'Ab', 'C']
+chords('M', 'A4') // => ['A4', 'C#5', 'E5']</code></pre>
 </dd>
 <dt>
 <h4 class="name" id="fromName"><span class="type-signature"></span>fromName<span class="signature">(name, tonic)</span><span class="type-signature"> &rarr; {Array}</span></h4>
@@ -275,7 +281,7 @@ The chord name may contain the tonic placed before the type (see example)</p>
 <li>
 <a href="https://github.com/danigb/music-chord/blob/master/fromName.js">fromName.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/fromName.js#L21">lineno 21</a>
+<a href="https://github.com/danigb/music-chord/blob/master/fromName.js#L22">lineno 22</a>
 </li>
 </ul></dd>
 </dl>
@@ -292,7 +298,8 @@ Type
 </dd>
 </dl>
 <h5>Example</h5>
-<pre class="prettyprint"><code>fromName('C7b9') // => ['C', 'E', 'G', 'Bb', 'Db']</code></pre>
+<pre class="prettyprint"><code>var fromName = require('music-chord/fromName')
+fromName('C7b9') // => ['C', 'E', 'G', 'Bb', 'Db']</code></pre>
 </dd>
 </dl>
 </article>

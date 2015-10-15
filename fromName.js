@@ -16,6 +16,7 @@ var IMPLICIT = /^([a-gA-G](?:#{1,4}|b{1,4}|x{1,2}|)(?:\d\s+|))(.*)$/
  * @return {Array} an array of notes in ascending order or null
  *
  * @example
+ * var fromName = require('music-chord/fromName')
  * fromName('C7b9') // => ['C', 'E', 'G', 'Bb', 'Db']
  */
 function fromName (name, tonic) {
