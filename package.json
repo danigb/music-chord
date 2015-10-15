@@ -4,7 +4,8 @@
   "description": "Music chords made easy",
   "main": "index.js",
   "scripts": {
-    "test": "vows test/*.js"
+    "test": "vows --spec test/*.js",
+    "docs": "docme README.md"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,10 @@
     "vows": "^0.8.1"
   },
   "dependencies": {
-    "curry": "^1.2.0"
+    "curry": "^1.2.0",
+    "interval-parser": "^0.10.0",
+    "pitch-op": "^0.1.0",
+    "pitch-parser": "^0.1.0",
+    "pitch-transpose": "^0.1.0"
   }
 }
