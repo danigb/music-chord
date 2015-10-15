@@ -1,6 +1,7 @@
 CHANGELOG
 
 [Master]
+- fromName accepts pitches with octaves if spaced
 - add fromName function
 - dictionary function
 - build chord

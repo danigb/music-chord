@@ -70,7 +70,7 @@ chords('M', 'G') // => ['G', 'B', 'D']
 chords('m', 'G') // => ['G', 'Bb', 'D']
 ```
 
-`music-chord` brings some dictionaries you can require:
+`music-chord` brings some dictionaries you can use:
 
 ```js
 var dictionary = require('music-chord/dictionary')
@@ -79,11 +79,19 @@ var chords = dictionary(data)
 chords('mMaj7', 'F') // => ['F', 'Ab', 'C', 'E']
 ```
 
-Require the `fromName` function to have instant access to them (and bonus: you can place the tonic before the type):
+Or require the `fromName` function to have instant access to them:
+
+```js
+var fromName = require('music-chord/fromName')
+fromName('mMaj7', 'F') // => ['F', 'Ab', 'C', 'E']
+```
+
+As bonus, with `fromName` function you can place the tonic before the type (with a space if you want to specify the octave):
 
 ```js
 var fromName = require('music-chord/fromName')
 fromName('FmMaj7') // => ['F', 'Ab', 'C', 'E']
+fromName('F2 mMaj7') // => ['F2', 'Ab2', 'C3', 'E3']
 ```
 
 #### Chord detection

@@ -10,5 +10,6 @@ vows.describe('fromName').addBatch({
   'from name': function () {
     assert.deepEqual(fromName('C7b9'), ['C', 'E', 'G', 'Bb', 'Db'])
     assert.equal(fromName('c13#9').join(' '), 'C E G Bb D# A')
+    assert.equal(fromName('c3 13#9').join(' '), 'C3 E3 G3 Bb3 D#4 A4')
   }
 }).export(module)

@@ -4,7 +4,7 @@ var chords = require('./dict/chords.json')
 var aliases = require('./dict/aliases.json')
 var dict = dictionary(chords, aliases)
 
-var IMPLICIT = /^([a-gA-G](?:#{1,4}|b{1,4}|x{1,2}|))(.*)$/
+var IMPLICIT = /^([a-gA-G](?:#{1,4}|b{1,4}|x{1,2}|)(?:\d\s+|))(.*)$/
 /**
  * Build chords by name
  *
@@ -22,7 +22,7 @@ function fromName (name, tonic) {
   var chord = dict(name, tonic)
   if (chord) return chord
   var m = IMPLICIT.exec(name)
-  return m ? dict(m[2], tonic || m[1]) : null
+  return m ? dict(m[2], tonic || m[1].trim()) : null
 }
 
 module.exports = fromName
