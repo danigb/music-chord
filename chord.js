@@ -14,8 +14,8 @@ var gamut = require('./gamut')
  * one parameter instead of two (see example)
  *
  * @param {Array} source - the list of intervals or notes
- * @param {String} tonic - the tonic of the chord
- * @return {Array} the chord notes
+ * @param {String} tonic - the tonic of the chord or null to get the intervals
+ * @return {Array} the chord notes (or intervals if null tonic)
  *
  * @example
  * var chord = require('music-chord')
@@ -25,7 +25,8 @@ var gamut = require('./gamut')
  */
 function chord (src, tonic) {
   var intervals = gamut.intervals(src)
-  return intervals ? intervals.map(transpose(tonic)) : null
+  if (!intervals) return null
+  return tonic ? intervals.map(transpose(tonic)) : gamut.asIntervals(intervals)
 }
 
 module.exports = curry(chord)

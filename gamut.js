@@ -26,7 +26,12 @@ function mapValues (fn, hash) {
   }, {})
 }
 
+function asIntervals (src) {
+  return toArray(src).map(asInterval.build)
+}
+
 module.exports = {
   intervals: intervals,
+  asIntervals: asIntervals,
   mapValues: mapValues
 }
