@@ -60,6 +60,14 @@ var maj7drop2 = chord('C2 E2 G1 B2')
 maj7drop2('C4') // => [ 'G3', 'C4', 'E4', 'B4' ]
 ```
 
+#### Get chord intervals
+
+Set `null` as root to get the chord intervals:
+
+```js
+var chord('C E G B', null) // => ['1P', '3M', '5P', '7M']
+```
+
 #### Dictionaries
 
 You can create a dictionary of chords using hashes by require `dictionary` function:
