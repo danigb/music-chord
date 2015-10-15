@@ -1,6 +1,7 @@
 CHANGELOG
 
 [Master]
+- add fromName function
 - dictionary function
 - build chord
 - add dictionaries

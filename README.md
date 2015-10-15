@@ -8,6 +8,7 @@
 Music chords made easy:
 
 ```js
+var chord = require('music-chord')
 var M9 = chord('1 3 5 7 9')
 M9('D3') // => ['D3', 'F#3', 'A#3', 'C#4', 'E4']
 var dom7 = chord('C E G Bb')
@@ -60,7 +61,30 @@ maj7drop2('C4') // => [ 'G3', 'C4', 'E4', 'B4' ]
 
 #### Dictionaries
 
-Cooming soon...
+You can create a dictionary of chords using hashes:
+
+```js
+var dictionary = require('music-chord/dictionary')
+var chords = dictionary({ M: 'C E G', m: 'C Eb G'})
+chords('M', 'G') // => ['G', 'B', 'D']
+chords('m', 'G') // => ['G', 'Bb', 'D']
+```
+
+`music-chord` brings some dictionaries you can require:
+
+```js
+var dictionary = require('music-chord/dictionary')
+var data = require('music-chord/dict/chords.json')
+var chords = dictionary(data)
+chords('mMaj7', 'F') // => ['F', 'Ab', 'C', 'E']
+```
+
+Require the `fromName` function to have instant access to them (and bonus: you can place the tonic before the type):
+
+```js
+var fromName = require('music-chord/fromName')
+fromName('FmMaj7') // => ['F', 'Ab', 'C', 'E']
+```
 
 #### Chord detection
 
@@ -124,7 +148,7 @@ one parameter instead of two (see example)</p>
 <li>
 <a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L51">lineno 51</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L25">lineno 25</a>
 </li>
 </ul></dd>
 </dl>
@@ -144,6 +168,65 @@ Type
 <pre class="prettyprint"><code>chord('1 3 5 6', 'G') // => ['G', 'B', 'D', 'E']
 var maj79 = chord('C E G B D')
 maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
+</dd>
+<dt>
+<h4 class="name" id="chords"><span class="type-signature"></span>chords<span class="signature">(name, tonic)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Create chords by name and tonic</p>
+<p>The same as <code>chord</code> function but using chord names instead of intervals</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>name</code></td>
+<td class="type">
+<span class="param-type">String</span>
+</td>
+<td class="description last"><p>the chord name</p></td>
+</tr>
+<tr>
+<td class="name"><code>tonic</code></td>
+<td class="type">
+<span class="param-type">String</span>
+</td>
+<td class="description last"><p>(Optional) the tonic</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/danigb/music-chord/blob/master/chords.js">chords.js</a>
+<span>, </span>
+<a href="https://github.com/danigb/music-chord/blob/master/chords.js#L20">lineno 20</a>
+</li>
+</ul></dd>
+</dl>
+<h5>Returns:</h5>
+<div class="param-desc">
+<p>an array of notes in ascending order or null</p>
+</div>
+<dl>
+<dt>
+Type
+</dt>
+<dd>
+<span class="param-type">Array</span>
+</dd>
+</dl>
+<h5>Example</h5>
+<pre class="prettyprint"><code>chords('C7b9', 'C') // => ''</code></pre>
 </dd>
 <dt>
 <h4 class="name" id="dictionary"><span class="type-signature"></span>dictionary<span class="signature">(chordNames, aliases)</span><span class="type-signature"> &rarr; {function}</span></h4>
@@ -182,9 +265,9 @@ maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js">dictionary.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L63">lineno 63</a>
+<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js#L13">lineno 13</a>
 </li>
 </ul></dd>
 </dl>
