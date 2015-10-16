@@ -1,0 +1,11 @@
+CHANGELOG
+
+[Master]
+- build can return intervals if null as tonic
+
+[0.1.0]
+- fromName accepts pitches with octaves if spaced
+- add fromName function
+- dictionary function
+- build chord
+- add dictionaries
