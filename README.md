@@ -64,7 +64,7 @@ maj7drop2('C4') // => [ 'G3', 'C4', 'E4', 'B4' ]
 
 #### Get chord intervals
 
-Set `null` as root to get the chord intervals:
+Set `null` as tonic to get the chord intervals:
 
 ```js
 var chord('C E G B', null) // => ['1P', '3M', '5P', '7M']
@@ -72,7 +72,7 @@ var chord('C E G B', null) // => ['1P', '3M', '5P', '7M']
 
 #### Dictionaries
 
-You can create a dictionary of chords using hashes by require `dictionary` function:
+You can create a dictionary of chords with the `dictionary` function:
 
 ```js
 var dictionary = require('music-chord/dictionary')
@@ -81,16 +81,7 @@ chords('M', 'G') // => ['G', 'B', 'D']
 chords('m', 'G') // => ['G', 'Bb', 'D']
 ```
 
-`music-chord` brings some dictionaries you can use:
-
-```js
-var dictionary = require('music-chord/dictionary')
-var data = require('music-chord/dict/chords.json')
-var chords = dictionary(data)
-chords('mMaj7', 'F') // => ['F', 'Ab', 'C', 'E']
-```
-
-Or require the `fromName` function to have instant access to them:
+Use the built-in dictionaries with the `fromName`:
 
 ```js
 var fromName = require('music-chord/fromName')
@@ -110,7 +101,6 @@ fromName('F2 mMaj7') // => ['F2', 'Ab2', 'C3', 'E3']
 Cooming soon...
 
 ## API
-
 
 <!-- START docme generated API please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN docme TO UPDATE -->
@@ -138,9 +128,9 @@ Probably you will want to decorate this function with <code>gamut.notes</code> o
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L151">lineno 151</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L151">lineno 151</a>
 </li>
 </ul></dd>
 </dl>
@@ -150,24 +140,6 @@ var transpose = gamut.notes(gamut.add)
 transpose('2M', 'C D E') // => [ 'D', 'E', 'F#' ]
 var addIntervals = gamut.intevals(gamut.add)
 addIntervals('2M', '1P 2M 3M') // => [ '2M', '3M', '4A' ]</code></pre>
-</dd>
-<dt>
-<h4 class="name" id="intervals"><span class="type-signature"></span>intervals<span class="type-signature"></span></h4>
-</dt>
-<dd>
-<div class="description">
-<p>Get intervals of a given chord</p>
-</div>
-<dl class="details">
-<dt class="tag-source">Source:</dt>
-<dd class="tag-source"><ul class="dummy">
-<li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/intervals.js">intervals.js</a>
-<span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/intervals.js#L5">lineno 5</a>
-</li>
-</ul></dd>
-</dl>
 </dd>
 </dl>
 <dl>
@@ -208,9 +180,9 @@ This function <strong>always</strong> return an array, even if its empty</p>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L57">lineno 57</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L57">lineno 57</a>
 </li>
 </ul></dd>
 </dl>
@@ -275,9 +247,9 @@ one parameter instead of two (see example)</p>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/chord.js">chord.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/chord.js#L27">lineno 27</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L27">lineno 27</a>
 </li>
 </ul></dd>
 </dl>
@@ -336,9 +308,9 @@ maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/dictionary.js">dictionary.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js">dictionary.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/dictionary.js#L26">lineno 26</a>
+<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js#L26">lineno 26</a>
 </li>
 </ul></dd>
 </dl>
@@ -399,9 +371,9 @@ The chord name may contain the tonic placed before the type (see example)</p>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/fromName.js">fromName.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/fromName.js">fromName.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/fromName.js#L22">lineno 22</a>
+<a href="https://github.com/danigb/music-chord/blob/master/fromName.js#L22">lineno 22</a>
 </li>
 </ul></dd>
 </dl>
@@ -432,9 +404,9 @@ fromName('C7b9') // => ['C', 'E', 'G', 'Bb', 'Db']</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L25">lineno 25</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L25">lineno 25</a>
 </li>
 </ul></dd>
 </dl>
@@ -450,9 +422,9 @@ fromName('C7b9') // => ['C', 'E', 'G', 'Bb', 'Db']</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L136">lineno 136</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L136">lineno 136</a>
 </li>
 </ul></dd>
 </dl>
@@ -502,9 +474,9 @@ addIntervals('2M', '1P 5P') // => ['2M', '6M']</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L81">lineno 81</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L81">lineno 81</a>
 </li>
 </ul></dd>
 </dl>
@@ -537,9 +509,9 @@ octaveUp([ [0, 0, 0], [1, 0, 0] ]) // => [ [0, 0, 1], [1, 0, 1]]</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L122">lineno 122</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L122">lineno 122</a>
 </li>
 </ul></dd>
 </dl>
@@ -580,9 +552,9 @@ transpose('2M', 'C D E') // => [ 'D', 'E', 'F#' ]</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L98">lineno 98</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L98">lineno 98</a>
 </li>
 </ul></dd>
 </dl>
@@ -613,9 +585,9 @@ gamut.parse('1P 3M 5P') // => [ [0, 0, 0], [2, 0, 0], [4, 0, 0] ]</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L145">lineno 145</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L145">lineno 145</a>
 </li>
 </ul></dd>
 </dl>
@@ -631,9 +603,9 @@ gamut.parse('1P 3M 5P') // => [ [0, 0, 0], [2, 0, 0], [4, 0, 0] ]</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L205">lineno 205</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L205">lineno 205</a>
 </li>
 </ul></dd>
 </dl>
@@ -649,9 +621,9 @@ gamut.parse('1P 3M 5P') // => [ [0, 0, 0], [2, 0, 0], [4, 0, 0] ]</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L216">lineno 216</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L216">lineno 216</a>
 </li>
 </ul></dd>
 </dl>
@@ -667,9 +639,9 @@ gamut.parse('1P 3M 5P') // => [ [0, 0, 0], [2, 0, 0], [4, 0, 0] ]</code></pre>
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js">tmp/gamut.js</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js">tmp/gamut.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/0.2.0/tmp/gamut.js#L191">lineno 191</a>
+<a href="https://github.com/danigb/music-chord/blob/master/tmp/gamut.js#L191">lineno 191</a>
 </li>
 </ul></dd>
 </dl>

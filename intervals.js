@@ -2,9 +2,14 @@
 
 var gamut = require('music-gamut')
 
-/**
- * Get intervals of a given chord
+/*
+ * Get intervals of a given chord (not yet public API)
  *
+ * @api private
  * @name intervals
+ * @function
+ * @param {String|Array} gamut - the notes or intervals
+ * @return {Array<Array>} the chord intervals in ascending order
+ *
  */
 module.exports = gamut.fn([ gamut.asIntervals, gamut.sort, gamut.harmonics ])
