@@ -1,8 +1,9 @@
 'use strict'
 
 var curry = require('curry')
-var transpose = require('pitch-transpose')
-var gamut = require('./gamut')
+var gamut = require('music-gamut')
+var intervals = require('./intervals')
+var transpose = gamut.asNotes(gamut.add)
 
 /**
  * Build a chord from a source and a tonic
@@ -24,9 +25,7 @@ var gamut = require('./gamut')
  * maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']
  */
 function chord (src, tonic) {
-  var intervals = gamut.intervals(src)
-  if (!intervals) return null
-  return tonic ? intervals.map(transpose(tonic)) : gamut.asIntervals(intervals)
+  return tonic ? transpose(tonic, intervals(src)) : gamut.asIntervals(intervals(src))
 }
 
 module.exports = curry(chord)

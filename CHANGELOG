@@ -1,6 +1,7 @@
 CHANGELOG
 
-[Master]
+[0.2.0]
+- use music-gamut
 - build can return intervals if null as tonic
 
 [0.1.0]
@@ -9,3 +10,9 @@ CHANGELOG
 - dictionary function
 - build chord
 - add dictionaries
+
+
+DIST
+[0.1.0]
+18985 16 oct 11:10 chord.js
+9593 16 oct 11:10 chord.min.js

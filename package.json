@@ -30,10 +30,6 @@
   },
   "dependencies": {
     "curry": "^1.2.0",
-    "interval-parser": "^0.10.0",
-    "music-gamut": "file:../music-gamut",
-    "pitch-op": "^0.1.0",
-    "pitch-parser": "^0.1.0",
-    "pitch-transpose": "^0.1.0"
+    "music-gamut": "^0.2.1"
   }
 }

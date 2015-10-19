@@ -1,7 +1,7 @@
 'use strict'
 
-var gamut = require('./gamut')
 var chord = require('./chord')
+var intervals = require('./intervals')
 
 function mapValues (fn, hash) {
   return Object.keys(hash).reduce(function (ret, key) {
@@ -24,7 +24,7 @@ function mapValues (fn, hash) {
  * chords('M', 'A4') // => ['A4', 'C#5', 'E5']
  */
 function dictionary (dict, aliases) {
-  var idict = mapValues(gamut.intervals, dict)
+  var idict = mapValues(intervals, dict)
   aliases = aliases || []
   return function (name, tonic) {
     var intervals = idict[name] || idict[aliases[name]]
