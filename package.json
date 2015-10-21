@@ -1,6 +1,6 @@
 {
   "name": "music-chord",
-  "version": "0.3.0-pre",
+  "version": "0.3.0",
   "description": "Music chords made easy",
   "main": "chord.js",
   "scripts": {
@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "curry": "^1.2.0",
-    "music-gamut": "file:../music-gamut"
+    "music-gamut": "^0.5.0"
   }
 }

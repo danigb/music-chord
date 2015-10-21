@@ -249,7 +249,7 @@ one parameter instead of two (see example)</p>
 <li>
 <a href="https://github.com/danigb/music-chord/blob/master/chord.js">chord.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L27">lineno 27</a>
+<a href="https://github.com/danigb/music-chord/blob/master/chord.js#L25">lineno 25</a>
 </li>
 </ul></dd>
 </dl>
@@ -310,7 +310,7 @@ maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']</code></pre>
 <li>
 <a href="https://github.com/danigb/music-chord/blob/master/dictionary.js">dictionary.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js#L26">lineno 26</a>
+<a href="https://github.com/danigb/music-chord/blob/master/dictionary.js#L28">lineno 28</a>
 </li>
 </ul></dd>
 </dl>
