@@ -1,7 +1,7 @@
 'use strict'
 
 var chord = require('./chord')
-var intervals = require('./intervals')
+var gamut = require('music-gamut')
 
 function mapValues (fn, hash) {
   return Object.keys(hash).reduce(function (ret, key) {
@@ -9,6 +9,8 @@ function mapValues (fn, hash) {
     return ret
   }, {})
 }
+
+function intervals (src) { return gamut.sortBySize(gamut.distances(null, src)) }
 
 /**
  * Create a chord dictionary

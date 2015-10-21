@@ -2,8 +2,6 @@
 
 var curry = require('curry')
 var gamut = require('music-gamut')
-var intervals = require('./intervals')
-var transpose = gamut.asNotes(gamut.add)
 
 /**
  * Build a chord from a source and a tonic
@@ -25,7 +23,8 @@ var transpose = gamut.asNotes(gamut.add)
  * maj79('A4') // => ['A4', 'C#5', 'E5', 'G#5', 'B5']
  */
 function chord (src, tonic) {
-  return tonic ? transpose(tonic, intervals(src)) : gamut.asIntervals(intervals(src))
+  var intervals = gamut.sortBySize(gamut.distances(null, src))
+  return tonic ? gamut.transpose(tonic, intervals) : intervals
 }
 
 module.exports = curry(chord)

@@ -12,4 +12,4 @@ var gamut = require('music-gamut')
  * @return {Array<Array>} the chord intervals in ascending order
  *
  */
-module.exports = gamut.fn([ gamut.asIntervals, gamut.sort, gamut.harmonics ])
+module.exports = function (notes) { gamut.distances(null, notes) }
